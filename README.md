@@ -9,7 +9,7 @@ The objective is to rearrange the tiles to match a specific target configuration
 ## Rules
 + Only tiles adjacent to the blank space can be moved
 + Moves are made by sliding a tile into the blank space, thereby changing its position with the blank.
-## Matematical properties
+## Mathematical properties
 + State space: For a $n*n$ puzzle, there are $n^{2}!$ possible arrangements of tiles, however only half of these configurations are solvable due to the puzzle's *parity* property determined by the number of the inversions.
 + Complexity: The complexity of the puzzle grows exponetially with the dimension of the grid.
 + Solvability: A puzzle configuration is solvable if certians conditions are met (see bottom of this section for more details).
