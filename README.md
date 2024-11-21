@@ -32,17 +32,29 @@ Or, as mentioned in the main subsection, if the number of inversions (pairs of t
 ### BFS
 The sliding puzzle can be solved via BFS (Breadth-First-Search) uninformed startegy. This strategy is implemented with attention at previous states to not repeat itself, capable of acheiving always the best solution.  
 However it is very computationally expensive both in terms of time and space, since it keeps track of all visted spaces and it will eventually explore nearly all of the possible states of the problem (remember that their number has been defined in the *Mathemaical prperties* in the prevoius section).  
-Therefore I suggest using this only for puzzles with dimension 3x3, here I report my results obtained with the starting grid: <br>[[4 7 0][8 5 1][2 3 6]]
+Therefore I suggest using this only for puzzles with dimension 3x3.
 
-<Put results here>
 
 ### DFS
 The second uninformed strategy is the DFS (Depth-First-Search).  
 This solution always solves the prboblem if a solution exists, but does not guarantee the optimal one. This implementation is very resource-consuming in terms of space since it does store the found states in order to avoid repetitions or loops, but it explores all the solutions space only in the worst-case scenario.  
-I report in the following the results obtained with the starting grid: [[][][]]  
 
 ## Informed strategy
-### IDA*
+### A*
+**A*** Is the is a search algorithm used to find the shortest path in a graph or grid. It uses a combination of two costs for evaluating nodes:
++ g(n): The cost to reach the current node (from the starting point).
++ h(n): The estimated cost to reach the goal (from the current node). This is provided by a heuristic function.
+
+A* evaluates each node using the formula: $f(n)=g(n)+h(n)$.  
+By using the *Manahattan cost* as heuristic function, I present an A* implementation capable of solving nxn general problem within reasonable time. 
+
+# Experiments and conslusions
+In this section I report all the experiments with all the proposed solutions described above
+| Strategy           | Initial State                         | Quality         | Cost | Efficiency |
+|--------------------|---------------------------------------|-----------------|------|------------|
+| BFS                |                                       |                 |      |            |
+| DFS                |                                       |                 |      |            |
+| A*                 |                                       |                 |      |            |
 
 
 
