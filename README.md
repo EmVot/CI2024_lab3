@@ -28,5 +28,21 @@ An *inversion* occurs when a larger numbered tile precedes a smaller numbered ti
 Or, as mentioned in the main subsection, if the number of inversions (pairs of tiles in the wrong order) has the same parity as the *Manhattan distance* of the blank space from its goal position
 
 # Proposed solutions
+## Uninformed strategies
+### BFS
+The sliding puzzle can be solved via BFS (Breadth-First-Search) uninformed startegy. This strategy is implemented with attention at previous states to not repeat itself, capable of acheiving always the best solution.  
+However it is very computationally expensive both in terms of time and space, since it keeps track of all visted spaces and it will eventually explore nearly all of the possible states of the problem (remember that their number has been defined in the *Mathemaical prperties* in the prevoius section).  
+Therefore I suggest using this only for puzzles with dimension 3x3, here I report my results obtained with the starting grid: <br>[[4 7 0][8 5 1][2 3 6]]
+
+<Put results here>
+
+### DFS
+The second uninformed strategy is the DFS (Depth-First-Search).  
+This solution always solves the prboblem if a solution exists, but does not guarantee the optimal one. This implementation is very resource-consuming in terms of space since it does store the found states in order to avoid repetitions or loops, but it explores all the solutions space only in the worst-case scenario.  
+I report in the following the results obtained with the starting grid: [[][][]]  
+
+## Informed strategy
+### IDA*
+
 
 
