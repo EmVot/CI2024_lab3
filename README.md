@@ -52,7 +52,7 @@ By using the *Manahattan cost* as heuristic function, I present an A* implementa
 In this section I report all the experiments with all the proposed solutions described above
 | Strategy           | Initial State                         | Quality         | Cost | Efficiency |
 |--------------------|---------------------------------------|-----------------|------|------------|
-| BFS                |                                       |                 |      |            |
+| BFS                | [[4 7 0][8 5 1][2 3 6]]               | 24 (Optimal)    |   $(4^{24}$-1)/3| close to 0           |
 | DFS                |                                       |                 |      |            |
 | A*                 |                                       |                 |      |            |
 
