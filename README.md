@@ -37,7 +37,8 @@ Therefore I suggest using this only for puzzles with dimension 3x3.
 
 ### DFS
 The second uninformed strategy is the DFS (Depth-First-Search).  
-This solution always solves the prboblem if a solution exists, but does not guarantee the optimal one. This implementation is very resource-consuming in terms of space since it does store the found states in order to avoid repetitions or loops, but it explores all the solutions space only in the worst-case scenario.  
+This solution always solves the prboblem if a solution exists, but does not guarantee the optimal one. This implementation is very resource-consuming in terms of space since it does store the found states in order to avoid repetitions or loops, but it explores all the solutions space only in the worst-case scenario.
+Unfortunatly, due to limited resources the recursive implementation presented is not viable as it reaches the recursion limit preatty soon.
 
 ## Informed strategy
 ### A*
@@ -46,15 +47,30 @@ This solution always solves the prboblem if a solution exists, but does not guar
 + h(n): The estimated cost to reach the goal (from the current node). This is provided by a heuristic function.
 
 A* evaluates each node using the formula: $f(n)=g(n)+h(n)$.  
-By using the *Manahattan cost* as heuristic function, I present an A* implementation capable of solving nxn general problem within reasonable time. 
+By using the *Manahattan cost* as heuristic function, I present an A* implementation capable of solving nxn general problem within reasonable time.
+I also credit Stefano Fumero for path representation and the idea of using bytes as representation of the state inside the open_list and visited set, since it is hashable. 
 
 # Experiments and conslusions
 In this section I report all the experiments with all the proposed solutions described above
-| Strategy           | Initial State                         | Quality         | Cost | Efficiency |
+| Strategy           | Puzzle Dimension                         | Quality         | Cost | Efficiency |
 |--------------------|---------------------------------------|-----------------|------|------------|
-| BFS                | [[4 7 0][8 5 1][2 3 6]]               | 24 (Optimal)    |   $(4^{24}$-1)/3| close to 0           |
-| DFS                |                                       |                 |      |            |
-| A*                 |                                       |                 |      |            |
+| BFS                | 3               | 24 (Optimal)    |   $(4^{24}$-1)/3| close to 0           |
+| DFS                | [Not considered]                      |        /        |  /    |     /       |
+| A*                 |  3                                     |  16               |  508    |    0.03        |
+
+in the following table i report only the experiments done with the A* algorithm
+|Puzzle Dimension | Quality | Cost | Efficiency |
+|-----------------|---------|------|------------|
+|4                |    44   |   212928  |    0       |
+|5                |    /    |   /  |    /       |
+|6                |    /    |   /  |    /       |
+|7                |    /    |   /  |    /       |
+
+Overall the A* algorithm with the manhattan distance as heurisitc is the most efficient algorithm to solve the sliding puzzle problem, assuring the optimal solution.
+The exponentially growing complexity of the problem in relation to its size, however, make it unfeasible to solve at puzzle dimensions major to 5, and the efficiency of the algorithm using this heuristic is close to 0, since it considers all the neighbor states, suggesting that for this very problem there might be more suited heuristics. 
+
+
+
 
 
 
