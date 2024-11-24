@@ -51,6 +51,7 @@ By using the *Manahattan cost* as heuristic function, I present an A* implementa
 I also credit Stefano Fumero for path representation and the idea of using bytes as representation of the state inside the open_list and visited set, since it is hashable. 
 
 # Experiments and conslusions
+## Experiments
 In this section I report all the experiments with all the proposed solutions described above
 | Strategy           | Puzzle Dimension                         | Quality         | Cost | Efficiency |
 |--------------------|---------------------------------------|-----------------|------|------------|
@@ -67,7 +68,11 @@ in the following table i report only the experiments done with the A* algorithm
 |7                |    /    |   /  |    /       |
 
 Overall the A* algorithm with the manhattan distance as heurisitc is the most efficient algorithm to solve the sliding puzzle problem, assuring the optimal solution.
-The exponentially growing complexity of the problem in relation to its size, however, make it unfeasible to solve at puzzle dimensions major to 5, and the efficiency of the algorithm using this heuristic is close to 0, since it considers all the neighbor states, suggesting that for this very problem there might be more suited heuristics. 
+The exponentially growing complexity of the problem in relation to its size, however, make it unfeasible to solve at puzzle dimensions major to 5, and the efficiency of the algorithm using this heuristic is close to 0, since it considers all the neighbor states, suggesting that for this very problem there might be more suited 'h' functions for this problem.
+Another possibility might be using a 'h' function which overestimates the distance to the solution, but in this case the A* algorithm will not provide the best path anymore, since it is necessary to *h* to be **admissible**.
+## Conclusions
+N-sliding puzzzle is a very challenging problem even to informed algorithms, and it results unapproachable in reasonable time for uninformed ones.  
+This is mainly attribuited to the difficulty to find a good admissible heuristic for the problem, since the distance from the solution 
 
 
 
